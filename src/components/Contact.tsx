@@ -1,5 +1,6 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
+import { portfolioData } from "../data/portfolioData";
 
 const Contact = () => {
   return (
@@ -10,21 +11,21 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:example@mail.com" data-cursor="disable">
-                example@mail.com
+              <a href={`mailto:${portfolioData.contact.email}`} data-cursor="disable">
+                {portfolioData.contact.email}
               </a>
             </p>
             <h4>Phone</h4>
             <p>
-              <a href="tel:+9199999999" data-cursor="disable">
-                +91 99999 99999
+              <a href={`tel:${portfolioData.contact.phone.replace(/\s+/g, '')}`} data-cursor="disable">
+                {portfolioData.contact.phone}
               </a>
             </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com"
+              href={portfolioData.contact.github}
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -32,7 +33,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href={portfolioData.contact.linkedin}
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -40,7 +41,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com"
+              href={portfolioData.contact.twitter}
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -48,7 +49,7 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com"
+              href={portfolioData.contact.instagram}
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -58,10 +59,10 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Moncy Yohannan</span>
+              Designed and Developed <br /> by <span>{portfolioData.contact.name}</span>
             </h2>
             <h5>
-              <MdCopyright /> 2024
+              <MdCopyright /> {portfolioData.contact.year}
             </h5>
           </div>
         </div>

@@ -124,10 +124,17 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
   );
 }
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    // Refresh ScrollTrigger since TechStack mounting changes the document height
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       const threshold = document
